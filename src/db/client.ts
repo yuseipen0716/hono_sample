@@ -80,7 +80,7 @@ export function initializeDatabase() {
 
     if (!adminExists) {
       // 管理ユーザーの作成
-      const passwordHash = bcrypt.hashSync('password', 10)
+      const passwordHash = bcrypt.hashSync('Password$1234', 10)
 
       // 初期グループの作成
       db.insert(schema.groups).values({
