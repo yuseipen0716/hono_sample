@@ -1,12 +1,10 @@
-import { Context, Next } from 'hono'
+import type { Context, Next } from 'hono'
 import { getCookie } from 'hono/cookie'
-import { verify } from 'jsonwebtoken'
+import jwt from 'jsonwebtoken'
 import { db } from '../db/client'
 import { users } from '../db/schema'
 import { eq } from 'drizzle-orm'
-
-// JWT secret key
-const JWT_SECRET = process.env.JWT_SECRET || 'fallback-key'
+import { JWT_SECRET } from '../config'
 
 // middleware for user authentication
 export async function authMiddleware(c: Context, next: Next) {
@@ -17,7 +15,7 @@ export async function authMiddleware(c: Context, next: Next) {
   }
 
   try {
-    const decoded = verify(token, JWT_SECRET) as { id: number }
+    const decoded = jwt.verify(token, JWT_SECRET) as { id: number }
     const user = db.select().from(users).where(eq(users.id, decoded.id)).get()
 
     if (!user) {
