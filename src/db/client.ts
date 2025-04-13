@@ -4,7 +4,7 @@ import * as schema from './schema'
 import { eq } from 'drizzle-orm'
 
 // SQLiteのDBファイルへのpath
-const sqlite = new Database('kumiboard.db')
+const sqlite = new Database(process.env.DATABASE_PATH)
 
 // drizzle client
 export const db = drizzle(sqlite, { schema })
