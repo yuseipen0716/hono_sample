@@ -1,6 +1,6 @@
 ```
-npm install
-npm run dev
+bun i
+bun run dev
 ```
 
 ```
