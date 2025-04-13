@@ -2,7 +2,7 @@
   "name": "hono-sample",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts"
+    "dev": "tsx watch src/index.tsx"
   },
   "dependencies": {
     "@hono/node-server": "^1.14.0",
