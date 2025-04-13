@@ -3,6 +3,7 @@ import { jsx } from 'hono/jsx'
 import { Hono } from 'hono'
 import { serve } from '@hono/node-server'
 import type { FC } from 'hono/jsx'
+import 'dotenv/config'
 
 const app = new Hono()
 
