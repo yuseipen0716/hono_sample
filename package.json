@@ -6,9 +6,19 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.14.0",
-    "hono": "^4.7.5"
+    "@hono/zod-validator": "^0.4.3",
+    "bcrypt": "^5.1.1",
+    "better-sqlite3": "^11.9.1",
+    "drizzle-orm": "^0.41.0",
+    "hono": "^4.7.5",
+    "hono-sessions": "^0.7.2",
+    "jsonwebtoken": "^9.0.2",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^20.11.17",
     "tsx": "^4.7.1"
   }
