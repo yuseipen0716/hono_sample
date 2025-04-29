@@ -11,7 +11,9 @@ export async function authMiddleware(c: Context, next: Next) {
   const token = getCookie(c, 'auth_token')
 
   if (!token) {
-    return c.json({ error: 'Authnetication required' }, 401)
+    // return c.json({ error: 'Authnetication required' }, 401)
+      // ログインページにリダイレクト
+      return c.redirect('/auth/login')
   }
 
   try {
